@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "nhk-easy-ruby"
-  spec.version       = "0.0.0"
+  spec.version       = "1.0.0"
   spec.authors       = ["Zachary Scott"]
   spec.email         = ["e@zzak.io"]
 
