@@ -1,6 +1,6 @@
 # NHK::Easy
 
-Ruby client library for NHK News Web Easy.
+Ruby client library for [NHK News Web Easy](http://www.nhk.or.jp/news/easy/).
 
 ## Installation
 
