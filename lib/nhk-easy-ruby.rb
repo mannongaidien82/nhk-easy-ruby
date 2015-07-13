@@ -1,5 +1,7 @@
 require 'json'
 require 'net/http'
+require 'nokogiri'
+require 'sanitize'
 
 module NHK
   module Easy
@@ -25,6 +27,24 @@ module NHK
         end
 
         return news_list
+      end
+
+      def get_html_article(news)
+        article = get_article(news)
+        return Sanitize.fragment(article, :elements => ['p', 'ruby', 'rt'])
+      end
+
+      def get_text_article(news)
+        article = get_article(news)
+        return Sanitize.fragment(article, :elements => ['rt'])
+          .gsub('<rt>', '(').gsub('</rt>', ')')
+      end
+
+      def get_article(news)
+        uri = URI(news.news_web_easy_url)
+        response = Net::HTTP.get(uri)
+        doc = Nokogiri::HTML(response)
+        return doc.at_css("#newsarticle")
       end
     end
 
