@@ -49,6 +49,10 @@ module NHK
         parse_item(item)
       end
 
+      def news_web_easy_url
+        NHK::Easy::BASE_URI+"#{news_id}/#{news_id}.html"
+      end
+
       def news_web_image_url
         NHK::Easy::BASE_URI+"#{news_id}/#{news_web_image_uri}"
       end
