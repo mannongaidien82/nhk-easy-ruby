@@ -12,4 +12,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.glob(["lib/**/*", "nhk-easy-ruby.gemspec"])
 
   spec.require_paths = ["lib"]
+
+  spec.add_runtime_dependency "nokogiri"
+  spec.add_runtime_dependency "sanitize"
 end

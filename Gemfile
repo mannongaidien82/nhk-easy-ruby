@@ -4,5 +4,3 @@ gemspec
 
 gem "minitest"
 gem "rake"
-gem "nokogiri"
-gem "sanitize"
