@@ -16,7 +16,7 @@ module NHK
           .force_encoding('UTF-8')
           .gsub("\xEF\xBB\xBF", '')
 
-        json = Parser.new(data).parse!
+        json = JSON.parse(data)
         news_list = NewsList.new
         json.map do |list|
           list.keys.each do |date|
@@ -104,16 +104,6 @@ module NHK
         item.each do |key, value|
           self.send("#{key}=", value) rescue next
         end
-      end
-    end
-
-    class Parser
-      def initialize data={}
-        @data = data
-      end
-
-      def parse!
-        JSON.parse @data
       end
     end
   end
