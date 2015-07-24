@@ -32,7 +32,7 @@ module NHK
       def get_html_article(news)
         article = get_article(news)
         return Sanitize.fragment(article,
-          :elements => ['p', 'img', 'ruby', 'rt'],
+          :elements => ['p', 'img', 'br', 'ruby', 'rt'],
           :attributes => {'img' => ['src', 'alt']})
       end
 
