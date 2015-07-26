@@ -34,6 +34,7 @@ module NHK
         return Sanitize.fragment(article,
           :elements => ['p', 'img', 'br', 'ruby', 'rt'],
           :attributes => {'img' => ['src', 'alt']})
+          .gsub('<p></p>', '')
       end
 
       def get_text_article(news)
